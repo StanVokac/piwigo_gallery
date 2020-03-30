@@ -1,0 +1,27 @@
+version: '3'
+services: 
+  gallery-web: 
+    container_name: web
+    ports: 
+      - "${PORT}:80"
+    image: svokac/gallery_web:latest
+    labels: 
+      app: webserver
+    volumes: 
+      - "gallery_data:/var/www/html"
+    working_dir: /var/www/html
+  gallery-db: 
+    container_name: mysql
+    environment: 
+    - MYSQL_DATABASE=${MYSQL_DATABASE}
+    - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    - MYSQL_USER=${MYSQL_USER}
+    image: mariadb/server 
+    labels: 
+      app: mysql
+    volumes: 
+      - "gallery_db:/var/lib/mysql"
+volumes: 
+  gallery_db: 
+  gallery_data:
