@@ -1,1 +1,0 @@
-# piwigo_gallery
