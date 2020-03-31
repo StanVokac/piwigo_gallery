@@ -2,10 +2,10 @@
 Piwigo 2.10.2 in Alpine Linux, Apache 2.4,  PHP 7 and external container with MariaDB
 
 # Building own container with the latest version of Piwigo Gallery
-  - Clone repository locally
+  - Clone repository locally (git clone https://github.com/StanVokac/piwigo_gallery.git)
   - Get the latest version of Piwigo Gallery (https://piwigo.org/download/dlcounter.php?code=latest)
   - Unzip ZIP file content to folder www  
-  - Run container buils (docker build -t piwigo_fallery .)
+  - Run container build (docker build -t piwigo_fallery .)
   
  # Running piwigo_gallery
   - In case, that you built your own image replace source image in docker-build.yaml file by yout own image name(image: svokac/gallery_web:latest
